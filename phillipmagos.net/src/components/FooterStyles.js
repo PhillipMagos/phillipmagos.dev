@@ -1,9 +1,12 @@
 import styled from 'styled-components';
+import 'bootstrap/dist/css/bootstrap.css';
 
 export const Box = styled.div`
+max-height: 100%;
 padding: 80px 60px;
 background: black;
 position: absolute;
+margin-right: 0;
 bottom: 0;
 width: 100%;
 

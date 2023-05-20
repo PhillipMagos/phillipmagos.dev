@@ -4,20 +4,25 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import { Route, Routes } from "react-router-dom"
 import Footer from "./components/Footer"
+import BSFooter from "./components/BSFooter"
 import 'bootstrap/dist/css/bootstrap.css';
+
 
 function App() {
   return (
     <div>
     <>
       <Navbar />
-      <div className="container">
-        <Routes>
+      <div className="containerd-flex align-items-center">
+        <Routes class="">
           <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
         </Routes>
-      <Footer />
+      {/* <BSFooter>
+      </BSFooter> */}
+      <BSFooter />
       </div>
     </>
     
