@@ -14,7 +14,7 @@ function App() {
     <>
       <Navbar />
       <div className="containerd-flex align-items-center">
-        <Routes class="">
+        <Routes class="justify-content-center">
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
