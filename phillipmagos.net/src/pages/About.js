@@ -8,12 +8,24 @@ export default function About() {
         <div class="col-lg-8 mx-auto">
           <div class=" px-4 py-5" id="featured-3">
             <h1 class="text-center">Welcome to the About page</h1>
-            <p>I've worked in the IT industry for over 8 years. Started from working as onsite support for my college's IT department to providing level 1 and 2 support at Dell Technologies As an experienced IT support technician, I can offer a wide range of IT services to resolve business and consumer related issues. These services include hardware, software and network support across commonly used devices ranging from Windows PC, Macbooks, android and iphones devices.</p>
-            <p>1. Introduce yourself: Start by introducing yourself and providing some background information. This could include your name, your profession, your education, and your relevant work experience.
-                      Introduction:
-   A: Hello there, I'm Phillip and I'm a software developer livig in Austin TX. I started out working in IT Support at Dell Technologies and now work as an Intake Coordinator for an E-marketing SAAS company. Since I've graduated from Austin Community College's software developement bootcamp, I'm now moving onto the next challenging and exciting role in my tech career. 
+            <article>
 
+            <p>I've worked in the IT industry for over 8 years. Started from working as onsite support for my college's IT department to providing level 1 and 2 support at Dell Technologies As an experienced IT support technician, I can offer a wide range of IT services to resolve business and consumer related issues. These services include hardware, software and network support across commonly used devices ranging from Windows PC, Macbooks, android and iphones devices.</p>
+            {/* <p>1. Introduce yourself: Start by introducing yourself and providing some background information. This could include your name, your profession, your education, and your relevant work experience.
+                      Introduction: */}
+  <p>Hello there, I'm Phillip and I'm a software developer living in Austin TX. I started out working in IT Support at Dell Technologies and now work as an Intake Coordinator for an E-marketing SAAS company. Since I've graduated from Austin Community College's software developement bootcamp, I'm now moving onto the next challenging and exciting role in my tech career.</p>
+<p>
 2. Share your skills and expertise: Highlight your skills and areas of expertise. This could include programming languages, software tools, design skills, or any other relevant skills that are relevant to your portfolio.
+<ul>
+  <h4>Programming & Coding languages</h4>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>Bootstrap</li>
+                <li>Javascript</li>
+                <li>React JS</li>
+                <li>SQL</li>
+                <li>Mongo</li>
+              </ul>
   A: 
   Programming & Coding languages: 
   HTML5
@@ -29,9 +41,9 @@ export default function About() {
   Postman
   Splunk
 
-3. Show your personality: Give visitors a sense of your personality by including some personal details. This could include your hobbies, interests, or any other details that help visitors get to know you.
+{/* 3. Show your personality: Give visitors a sense of your personality by including some personal details. This could include your hobbies, interests, or any other details that help visitors get to know you. */}
   A:
-  When I'm not programming, I'm usually going for a run, lifting weights or spending time with my two dogs and a cat.
+  <p>When I'm not programming, I'm usually going for a run, lifting weights or spending time with my two dogs and a cat.</p>
 
 4. Explain your approach: Explain your approach to your work. This could include your design philosophy, your development methodology, or any other insights into your work process.
 
@@ -40,6 +52,7 @@ export default function About() {
 6. Provide contact information: Make it easy for visitors to get in touch with you by including your contact information, such as your email address or social media profiles.
 
 7. Remember that your about page should be clear, concise, and easy to read. Use a friendly and approachable tone, and try to connect with your visitors on a personal level.</p>
+</article>
 <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
               <div class="feature col">
                 <div class="feature-icon bg-primary bg-gradient">
