@@ -2,9 +2,9 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "./heroes.css"
 export default function Contact() {
   return (
-    <div class="container">
-      <div class="row mt-5 justify-content-center">
-        <div class="col-md-8">
+    <div class="justify-content-center">
+      <div class="px-4 py-5 my-5 text-center">
+        <div class="col-md-5 mx-auto">
           <h1>Welcome to the Contact Page</h1>
           <div class="container">
             <div class="row mt-5 justify-content-center">
