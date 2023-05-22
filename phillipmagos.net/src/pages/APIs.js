@@ -16,7 +16,7 @@ function APIs() {
       const data = await response.json();
       setPostData(data);
     } catch (error) {
-      console.error(error);
+      console.error(`The following error is:`, error);
     }
   };
 
@@ -29,6 +29,8 @@ function APIs() {
             <div>
               <h2>{postData.title}</h2>
               <p>{postData.body}</p>
+              <p>The Id is: {postData.id}</p>
+              <p>The User's ID is: {postData.userId}</p>
             </div>
           ) : (
             <p>Loading post data...</p>
