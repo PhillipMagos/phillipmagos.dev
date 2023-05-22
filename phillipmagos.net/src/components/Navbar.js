@@ -41,6 +41,9 @@ export default function Navbar() {
 						<li class="nav-item">
 							<CustomLink class="nav-link" to="/blog">Blog (IP)</CustomLink>
 						</li>
+						<li class="nav-item">
+							<CustomLink class="nav-link" to="/APIs">APIs</CustomLink>
+						</li>
 						<li class="nav-item dropdown">
 							<CustomLink class="nav-link dropdown-toggle" to="/projects" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Projects</CustomLink>
 							<ul class="dropdown-menu" aria-labelledby="dropdown07XL">

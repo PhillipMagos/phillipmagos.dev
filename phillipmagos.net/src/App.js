@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar"
 import Contact from "./pages/Contact"
 import Home from "./pages/Home"
 import About from "./pages/About"
+import APIs from "./pages/APIs"
 import { Route, Routes } from "react-router-dom"
 import Footer from "./components/Footer"
 import BSFooter from "./components/BSFooter"
@@ -19,6 +20,8 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/APIs" element={<APIs />} />
+          {/* <Route path="/projects" element={<Projects />} /> */}
         </Routes>
       {/* <BSFooter>
       </BSFooter> */}
