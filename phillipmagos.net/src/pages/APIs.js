@@ -20,7 +20,7 @@ function APIs() {
       console.error(`The following error is:`, error);
     }
   };
-  
+
   return (
     <div class="justify-content-center">
       <div class="px-4 py-5 my-5 text-center">
@@ -50,7 +50,7 @@ export default APIs;
 
 
 
-// 
+//
 // import React, { useState, useEffect } from 'react';
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "./heroes.css";
