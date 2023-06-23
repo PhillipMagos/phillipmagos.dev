@@ -23,6 +23,7 @@ app.use(logger('dev'));
 // app.use(bodyParser.urlencoded({ extended: false }));
 // const mongoose = require('mongoose');
 app.use(express.static('public'));
+const axios = require('axios');
 
 app.get('/', (req, res) => {
   res.redirect('/home')
@@ -101,6 +102,44 @@ app.get("/id", (req, res) => {
 })
 // End of Southpark Characters
 
+app.get('/json', (req, res) => {
+  axios.get('https://jsonplaceholder.typicode.com/posts')
+    .then(response => {
+      const posts = response.data;
+      res.render('json', { posts });
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(500).send('An error occurred');
+    });
+});
+
+app.get('/', (req, res) => {
+  axios.get('https://jsonplaceholder.typicode.com/posts')
+    .then(response => {
+      const posts = response.data;
+      res.render('json', { posts });
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(500).send('An error occurred');
+    });
+});
+
+app.get('/post/:id', (req, res) => {
+  const postId = req.params.id;
+  const url = `https://jsonplaceholder.typicode.com/posts/${postId}`;
+
+  axios.get(url)
+    .then(response => {
+      const post = response.data;
+      res.render('single-post', { post });
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(500).send('An error occurred');
+    });
+});
 //const port = process.env.PORT || 3000
 //app.listen(port, ()=> console.log(`web host on port ${port}`))
 

@@ -1,0 +1,13 @@
+<%- include('partials/header.ejs', {title: "About"}) %>
+<h1>Posts</h1>
+<ul>
+  <% posts.forEach(post => { %>
+    <li>
+
+      <h3><%= post.title %></h3>
+      <p><%= post.body %></p>
+      <p>The post ID is: <%= post.id %></p>
+      <p>The user ID is: <%= post.userId %></p>
+    </li>
+  <% }); %>
+<%- include('partials/footer.ejs') %>
