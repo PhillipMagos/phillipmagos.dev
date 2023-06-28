@@ -4,6 +4,10 @@
 	padding: 0;
 	margin: 0;
 }
+
+html, body {
+	height: 100%;
+}
 /* .welcome {
 	border-style: ;
 	height: 40px;
@@ -321,4 +325,12 @@ box-sizing: border-box;
 	.bd-placeholder-img-lg {
 		font-size: 3.5rem;
 	}
+}
+}
+.content-wrap {
+  min-height: calc(100% - 60px); /* Adjust the value to accommodate the footer height */
+}
+
+.footer {
+  height: 60px; /* Set the desired height for the footer */
 }
