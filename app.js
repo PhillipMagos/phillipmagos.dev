@@ -1,3 +1,15 @@
+require("dotenv").config();
+const express = require('express');
+const app = express();
+const logger = require('morgan');
+
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+
+// Connection
+const mongoose = require('mongoose');
+
+
 //
 
 // const http = require('http')
@@ -14,16 +26,40 @@
 
 // added from https://docs.cpanel.net/knowledge-base/web-services/how-to-install-a-node.js-application/#install-the-application
 
-const express = require('express');
-const app = express();
-const logger = require('morgan');
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: false }));
+
+// getting DB and URI from process.env by destructuring
+const { MONGODB_URI } = process.env;
+
+// Connection
+const url = `${MONGODB_URI}`;
+
+mongoose
+  .connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log(`Connected to the Mongo database`))
+  .catch((err) => console.log(`Issues connecting to the Mongo database`));
+
 app.use(logger('dev'));
 // const bodyParser = require('body-parser');
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: false }));
-// const mongoose = require('mongoose');
+
+
 app.use(express.static('public'));
 const axios = require('axios');
+
+
+
+const formSchema = new mongoose.Schema({
+  fname: String,
+  lname: String,
+  companyName: String,
+  email: String,
+  phone: Number,
+  textBox: String,
+});
+
+// and Model
+const FormModel = new mongoose.model("forms", formSchema);
 
 app.get('/', (req, res) => {
   res.redirect('/home')
@@ -147,6 +183,37 @@ app.get('/post/:id', (req, res) => {
 // server.listen(port, hostname, () => {
 //   console.log(`Server running at http://${hostname}:${port}/`);
 // });
+
+app.post("/sendData", (req, res) => {
+  let tempObj = {};
+  for (doggy in req.body) {
+    tempObj[doggy] = req.body[doggy];
+  }
+
+  FormModel.create(tempObj, (error, result) => {
+    if (error) res.send(error.message);
+    // res.send(result);
+    res.redirect("/postContact");
+  });
+
+  // FormModel.create(tempObj, (result, error) 
+  // .then((result) => {
+  //   res.redirect("/postContact");
+  //   console.log(result)
+    
+  // })
+  // .catch((error) => {
+  //   res.send(error.message);
+  //   console.log(error.message)
+  // }))
+});
+
+app.get("/postContact", (req, res) => {
+  FormModel.find({}, (err, results) => {
+    if (err) res.send(err);
+    res.render("postContacts.ejs", { data: results });
+  });
+});
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`phillipmagos.net is listening on port ${port}`));
