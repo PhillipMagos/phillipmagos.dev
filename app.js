@@ -95,6 +95,14 @@ app.get('/checkout', (req, res) => {
   res.render('checkout.ejs')
 })
 
+app.get('/developments/frontend', (req, res) => {
+  res.render('frontend.ejs')
+});
+
+app.get('/developments/backend', (req, res) => {
+  res.render('backend.ejs')
+});
+
 // Beginning of Southpark Characters
 //Bring in our data - How we bring it out object? - Destructure
 const { characters } = require('./fakeData')
