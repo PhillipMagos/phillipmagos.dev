@@ -8,7 +8,7 @@ const logger = require('morgan');
 
 // Connection
 const mongoose = require('mongoose');
-
+console.log(mongoose.version);
 
 //
 
